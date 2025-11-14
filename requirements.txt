@@ -1,31 +1,23 @@
-# Core Telegram Libraries
 pyrogram==2.0.44
 cryptg
 telethon==1.34.0
-
-# Async & Database
 aiofiles==23.1.0
 aiosqlite==0.18.0
 uvloop==0.19.0
-
-# System utilities
-requests==2.31.0
 python-dotenv==1.0.0
 python-multipart==0.0.6
 
-# Media tools
+requests>=2.32.2   # FIXED
+
 pillow==10.2.0
 ffmpy==0.3.1
 mutagen==1.47.0
 
-# Downloaders
 yt-dlp==2024.07.07
 
-# Archive tools
 py7zr==0.21.0
 rarfile==4.1
 zipfile36==0.1.3
 
-# Helper / Utilities
 tqdm==4.66.1
 humanize==4.9.0
