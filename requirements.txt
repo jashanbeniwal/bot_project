@@ -1,11 +1,32 @@
+# Core Telegram Libraries
 pyrogram==2.0.44
 cryptg
+telethon==1.34.0
+
+# Async & Database
 aiofiles==23.1.0
 aiosqlite==0.18.0
+uvloop==0.19.0
+
+# System utilities
+requests==2.31.0
 python-dotenv==1.0.0
 python-multipart==0.0.6
-requests==2.31.0
-yt-dlp==2025.02.03         # latest valid version
-python-telegram-bot==21.6  # valid, optional
-telethon==1.34.0           # stable & supports 4GB uploads
-uvloop==0.19.0             # Python 3.11 compatible
+
+# Media tools
+pillow==10.2.0          # thumbnails, image processing
+ffmpy==0.3.1            # FFmpeg wrapper
+mutagen==1.47.0         # audio tags editor
+
+# Downloaders
+yt-dlp==2024.07.07      # latest valid version
+
+# Archives
+py7zr==0.21.0
+python-archive==0.2.1
+rarfile==4.1
+zipfile36==0.1.3
+
+# Helper / Utilities
+tqdm==4.66.1            # progress bar
+humanize==4.9.0         # readable sizes/times
