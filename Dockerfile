@@ -1,9 +1,13 @@
 FROM python:3.11-slim
 
+# Prevent .pyc files + force logs to flush
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install ffmpeg & unzip/p7zip
+# Avoid Debian warnings
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install system dependencies (FFmpeg + archive tools + compilers)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     p7zip-full \
@@ -11,17 +15,29 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     curl \
     build-essential \
+    gcc \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Set working directory
 WORKDIR /app
-COPY . /app
 
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+# Copy only requirements first (improves build caching)
+COPY requirements.txt .
 
-# Create runtime dirs
+# Upgrade pip safely and install dependencies
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the bot code
+COPY . .
+
+# Runtime directories
 RUN mkdir -p /app/tmp /app/data
 ENV TMPDIR=/app/tmp
 
-# Start
+# Expose optional port (if webhook used)
+EXPOSE 8080
+
+# Run bot
 CMD ["python", "main.py"]
