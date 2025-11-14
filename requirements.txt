@@ -1,0 +1,11 @@
+pyrogram==2.0.44
+tgcrypto==1.4.3
+aiofiles==23.1.0
+aiosqlite==0.18.0
+python-dotenv==1.0.0
+python-multipart==0.0.6
+requests==2.31.0
+yt-dlp==2025.10.01
+python-telegram-bot==20.9  # optional if you later want helper components
+telethon==1.29.2  # optional for large uploads
+uvloop==0.17.0
