@@ -8,9 +8,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_ID = int(os.environ.get("API_ID", "0"))
-API_HASH = os.environ.get("API_HASH", "")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+API_ID = int(os.environ.get("API_ID", "25331263"))
+API_HASH = os.environ.get("API_HASH", "cab85305bf85125a2ac053210bcd1030")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8432959224:AAFSJDUSkFYYJ-cKU_Rah4HWU_0Rkjw3i88")
 
 logging.basicConfig(level=logging.INFO,
                     format='[%(asctime)s] %(levelname)s - %(message)s')
