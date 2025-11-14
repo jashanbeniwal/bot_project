@@ -1,5 +1,5 @@
 pyrogram==2.0.44
-tgcrypto==1.4.3
+cryptg
 aiofiles==23.1.0
 aiosqlite==0.18.0
 python-dotenv==1.0.0
